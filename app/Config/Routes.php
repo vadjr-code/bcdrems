@@ -4,6 +4,8 @@ namespace Config;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes(true);
+$session = Services::session();
+define('SITE_URL', 'http://bcdrems.dcom');
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
@@ -36,7 +38,10 @@ $routes->get('/', 'Pages::view/home');
 $routes->match(['get', 'post'], 'property/create', 'Property::create');
 $routes->get('property/(:segment)', 'Property::view/$1');
 $routes->get('property', 'Property::index');
-$routes->get('(:any)', 'Pages::view/$1');
+
+// Admin Routes
+$routes->get('admin/(:segment)', 'Admin::view/$1/$2');
+$routes->get('admin', 'Admin::index');
 
 $routes->get('(:any)', 'Pages::view/$1');
 /**

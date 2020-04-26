@@ -12,7 +12,7 @@ class Property extends Controller
 		$model = new PropertyModel();
 		$data = [
 			'property'  => $model->getProperties(),
-			'name' => 'Property archive',
+			'title' => 'Property archive',
 		];
 
 		echo view('templates/header', $data);
@@ -30,7 +30,7 @@ class Property extends Controller
 			throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the property item: ' . $slug);
 		}
 
-		$data['name'] = $data['property']['name'];
+		$data['title'] = $data['property']['name'];
 
 		echo view('templates/header', $data);
 		echo view('property/view', $data);
