@@ -1,6 +1,7 @@
 <?php
 /* DATABASE CONFIGURATON:
 Info: List of default value. Should be change depends on the hosting credentials.
+Note: Currently, we only support mysqli database connection.
 DB_HOST = localhost
 DB_USER = root
 DB_PASS = root
