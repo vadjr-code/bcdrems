@@ -1,9 +1,24 @@
 <?php
 class Database
 {
-	private $select_query = "SELECT * FROM";
-	public static function select_all_from($query)
+	public $gb_conn;
+
+	function __construct()
 	{
-		$sql = $this->select_query;
+		$this->open_db_conn();
+	}
+	public function open_db_conn()
+	{
+		$this->gb_conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	}
+	
+	public function query($sql)
+	{
+		return mysqli_query($this->gb_conn, $sql);
+	}
+
+	public function esc($str)
+	{
+		return mysqli_real_escape_string($this->gb_conn, $str);
 	}
 }

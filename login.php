@@ -3,6 +3,9 @@ define('PAGE_TITLE', 'Login');
 define('ROOT_PATH', dirname(__FILE__));
 require_once ROOT_PATH . '/system_config.php';
 require_once ROOT_PATH . '/core/files.php';
+$database = new Database();
+$session = new Session();
+$user = new User();
 Session::login();
 ?>
 <!DOCTYPE html>
@@ -46,7 +49,7 @@ Session::login();
 							</div>
 						</div>
 						<div class="card-footer">
-							<button class="btn btn-success btn-lg btn-block">Login</button>
+							<button name="login_user" class="btn btn-success btn-lg btn-block">Login</button>
 						</div>
 					</form>
 				</div>
@@ -59,3 +62,12 @@ Session::login();
 </body>
 
 </html>
+<?php
+if (isset($_POST['login_user'])) {
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	if ($user->has_credential($username, $password)) {
+		$session->create($user->has_credential($username, $password));
+		Session::login();
+	}
+}

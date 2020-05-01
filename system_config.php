@@ -1,4 +1,8 @@
 <?php
+/* SESSION START
+*/
+session_start();
+
 /* DATABASE CONFIGURATON:
 Info: List of default value. Should be change depends on the hosting credentials.
 Note: Currently, we only support mysqli database connection.
@@ -11,6 +15,7 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'bcd_rems');
+define('DB_PREFIX', 'rems_');
 
 /* SYSTEM INFORMATION:
 Info: Required to change depending on your system information.
@@ -25,7 +30,3 @@ Info: Don't change if you don't know what you are doing.
 define('ADMIN_DIR', dirname(__FILE__) . '/admin');
 define('CORE_DIR', dirname(__FILE__) . '/core');
 define('INC_DIR', dirname(__FILE__) . '/inc');
-
-/* EXTRAS
-*/
-session_start();

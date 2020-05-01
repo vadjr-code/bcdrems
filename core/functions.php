@@ -1,6 +1,6 @@
 <?php
 /* Automatically Loading the classes declared outside the file.
-/ Note: Do not remove. Else heaven will fall on your head.
+/ Note: Do not remove else heaven will fall on your head.
 / When you create class put it inside classes folder make sure that it starts with "class_"
 / then the class name of your file.
  */
@@ -10,7 +10,6 @@ spl_autoload_register(function ($class) {
 		require_once $file;
 	}
 });
-
 
 /* CUSTOM FUNCTIONS
 / Note: You can add your functions here.
