@@ -25,3 +25,7 @@ Info: Don't change if you don't know what you are doing.
 define('ADMIN_DIR', dirname(__FILE__) . '/admin');
 define('CORE_DIR', dirname(__FILE__) . '/core');
 define('INC_DIR', dirname(__FILE__) . '/inc');
+
+/* EXTRAS
+*/
+session_start();

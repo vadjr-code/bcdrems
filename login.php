@@ -1,8 +1,9 @@
 <?php
 define('PAGE_TITLE', 'Login');
 define('ROOT_PATH', dirname(__FILE__));
-require_once ROOT_PATH . '/core/files.php';
 require_once ROOT_PATH . '/system_config.php';
+require_once ROOT_PATH . '/core/files.php';
+Session::login();
 ?>
 <!DOCTYPE html>
 <html lang="en">
