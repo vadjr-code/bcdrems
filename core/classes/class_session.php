@@ -20,7 +20,7 @@ class Session
 			if (isset($_GET['r'])) {
 				header("Location: " . $last_url_visited);
 			} else {
-				header('Location:/admin/');
+				header('Location:/mgmt/');
 			}
 		}
 	}

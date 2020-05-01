@@ -27,6 +27,6 @@ define('SYS_VERSION', '1.0.0');
 /* DIRECTORY PATH LOCATION:
 Info: Don't change if you don't know what you are doing.
 */
-define('ADMIN_DIR', dirname(__FILE__) . '/admin');
+define('MGMT_DIR', dirname(__FILE__) . '/mgmt');
 define('CORE_DIR', dirname(__FILE__) . '/core');
 define('INC_DIR', dirname(__FILE__) . '/inc');

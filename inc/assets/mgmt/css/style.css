@@ -1,0 +1,129 @@
+/* https://coolors.co/d9d7b8-efecca-ccdcc1-b5d5c3-d0e588-f7ff58-fbc954-ff934f-af7555-5e565a */
+body>.wrapper {
+	min-height: 100vh;
+	background-color: #efecca;
+	overflow: hidden;
+}
+
+#sidebar {
+	background-color: #fff;
+	width: 100%;
+	max-width: 230px;
+	min-height: 100vh;
+	max-height: 100vh;
+	overflow: hidden;
+}
+
+#sidebar .system-brand {
+	height: 50px;
+	padding: 12px;
+	background-color: #FF934F;
+}
+
+#sidebar .system-brand a {
+	color: #FFF;
+	vertical-align: middle;
+	font-size: 1.2em;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+#sidebar nav {
+	height: calc(100vh - 100px);
+	max-height: calc(100vh - 100px);
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+#sidebar nav>ul {
+	padding-bottom: 0.8rem;
+}
+
+#sidebar nav>ul>li>a {
+	position: relative;
+}
+
+#sidebar nav>ul>li.has-children>a::after {
+	content: '\f078';
+	position: absolute;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	right: 1rem;
+	transition: all 0.1s ease-in-out;
+}
+
+#sidebar .nav-item.has-children.active>a::after {
+	transform: rotate(180deg);
+}
+
+#sidebar nav .sub-menu {
+	padding-left: 1.6rem;
+	list-style: none;
+}
+
+#sidebar nav .sub-menu a {
+	position: relative;
+	border-left: 2px solid #5E565A;
+	padding: 0.3rem 1rem;
+}
+
+#sidebar nav .sub-menu a::before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 2px solid #5E565A;
+	background-color: #fff;
+	left: -6px;
+	top: calc(50% - 5px);
+}
+
+#sidebar nav .sub-menu a:hover::before,
+#sidebar nav .sub-menu a:hover {
+	border-color: #FF934F !important;
+	color: #FF934F !important;
+	font-weight: 700;
+}
+
+#sidebar nav .nav-link {
+	color: #5E565A !important;
+	font-size: 15px;
+	opacity: 0.7;
+	padding: 0.8rem 1rem;
+	border-radius: 0px;
+}
+
+#sidebar nav .nav-link:hover {
+	opacity: 1;
+}
+
+#sidebar .account {
+	background-color: #af7555;
+	height: 50px;
+	padding: 12px;
+	vertical-align: middle;
+}
+
+/* Content */
+#content {
+	max-width: calc(100vw - 230px);
+	max-height: 100vh;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto !important;
+}
+
+/* Dashboard */
+
+/* Add Property */
+#property_location {
+	height: 350px;
+}
+
+/* Map */
+#map {
+	width: 100%;
+	height: 100%;
+	background-color: #5E565A;
+}
