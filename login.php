@@ -6,7 +6,6 @@ require_once ROOT_PATH . '/core/files.php';
 $database = new Database();
 $session = new Session();
 $user = new User();
-Session::login();
 ?>
 <!DOCTYPE html>
 <html lang="en">

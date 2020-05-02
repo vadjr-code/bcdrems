@@ -14,11 +14,7 @@ spl_autoload_register(function ($class) {
 /* CUSTOM FUNCTIONS
 / Note: You can add your functions here.
 */
-function site_upload_uri($file = NULL)
+function mgmt_uri($page = '')
 {
-	if ($file == NULL) {
-		echo $_SERVER['HTTP_PROTOCOL'] . "://" . $_SERVER['HTTP_HOST'] . "/inc/uploads/";
-	} else {
-		echo $_SERVER['HTTP_PROTOCOL'] . "://" . $_SERVER['HTTP_HOST'] . "/inc/uploads/" . $file;
-	}
+	echo SYS_DOMAIN . "/mgmt/" . $page;
 }

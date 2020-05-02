@@ -20,6 +20,7 @@ define('DB_PREFIX', 'rems_');
 /* SYSTEM INFORMATION:
 Info: Required to change depending on your system information.
 */
+define('SYS_DOMAIN', 'http://bcdrems.dcom');
 define('SYS_TITLE', 'REMS');
 define('SYS_DESCRIPTION', 'Real Estate Management System');
 define('SYS_VERSION', '1.0.0');

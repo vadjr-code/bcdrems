@@ -22,11 +22,19 @@ Session::check();
 	<link rel="stylesheet" href="/inc/assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/inc/assets/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="/inc/assets/mgmt/css/style.css">
-	<script src="/inc/assets/jquery/jquery.min.js"></script>
-	<script src="/inc/assets/tinymce/tinymce.min.js"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1Ijoic2FnZWNvZGV4IiwiYSI6ImNrOXAxcm45YTA2OXMzb24xbGVzbjFvcnMifQ.79VzBKe-icUjCEE_ifFUAw';
+	</script>
 </head>
 
 <body>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css" />
+	<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 	<div class="wrapper d-flex h-100">
 		<aside id="sidebar" class="h-100">
 			<div class="system-brand">
@@ -39,20 +47,20 @@ Session::check();
 			</div>
 			<nav>
 				<ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-					<li class="nav-item active">
-						<a class="nav-link" href="/mgmt" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-home fa-fw"></i> Dashboard</a>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php mgmt_uri(); ?>" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-home fa-fw"></i> Dashboard</a>
 					</li>
 					<li class="nav-item has-children">
 						<a class="nav-link" href="#" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-map-marker-alt fa-fw"></i> Properties</a>
 						<ul class="sub-menu">
 							<li class="nav-item">
-								<a href="/mgmt/all_properties.php" class="nav-link">All Properties</a>
+								<a href="<?php mgmt_uri('all_properties.php'); ?>" class="nav-link">All Properties</a>
 							</li>
 							<li class="nav-item">
-								<a href="/mgmt/add_property.php" class="nav-link">Add Property</a>
+								<a href="<?php mgmt_uri('add_property.php'); ?>" class="nav-link">Add Property</a>
 							</li>
 							<li class="nav-item">
-								<a href="/mgmt/property_type.php" class="nav-link">Property Type</a>
+								<a href="<?php mgmt_uri('property_type.php'); ?>" class="nav-link">Property Type</a>
 							</li>
 						</ul>
 					</li>
@@ -60,10 +68,13 @@ Session::check();
 						<a class="nav-link" href="#" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-map fa-fw"></i> Location</a>
 						<ul class="sub-menu">
 							<li class="nav-item">
+								<a href="#" class="nav-link">Barangay</a>
+							</li>
+							<li class="nav-item">
 								<a href="#" class="nav-link">City</a>
 							</li>
 							<li class="nav-item">
-								<a href="/mgmt/map.php" class="nav-link">Map</a>
+								<a href="<?php mgmt_uri('map.php'); ?>" class="nav-link">Map</a>
 							</li>
 						</ul>
 					</li>
@@ -100,8 +111,16 @@ Session::check();
 							</li>
 						</ul>
 					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="?logout" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-sign-out-alt fa-fw"></i> Exit</a>
+					<li class="nav-item has-children">
+						<a class="nav-link" href="#" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-cogs fa-fw"></i> Settings</a>
+						<ul class="sub-menu">
+							<li class="nav-item">
+								<a href="<?php mgmt_uri('map_settings.php'); ?>" class="nav-link">Maps</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php mgmt_uri('?logout'); ?>" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-sign-out-alt fa-fw"></i> Exit</a>
 					</li>
 				</ul>
 			</nav>

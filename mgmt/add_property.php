@@ -4,9 +4,9 @@ require_once 'templates/header.php';
 ?>
 <div class="p-3">
 	<header>
-		<h1 class="h5">Add New Property</h1>
+		<h1 class="h5">New Property</h1>
 	</header>
-	<main class="mt-4">
+	<main class="mt-3">
 		<form method="POST">
 			<div class="row">
 				<div class="col col-12 col-lg-9">
@@ -15,26 +15,54 @@ require_once 'templates/header.php';
 					</div>
 					<div class="form-group">
 						<div class="row">
-							<div class="col-lg-7">
-								Description:*
-								<textarea name="property_desc" id="property_desc" class="description"></textarea>
-							</div>
 							<div class="col-lg-5">
-								Location:*
-								<div class="form-group">
-									<div id="property_location" class="property_location"></div>
-									<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-									<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
-									<script>
-										mapboxgl.accessToken = 'pk.eyJ1Ijoic2FnZWNvZGV4IiwiYSI6ImNrNnZ6eTd3ZzAyZXEzc29iNGk0YjV0M2kifQ.XaVxVmYumM6vw4zmVA08tw';
-										var map = new mapboxgl.Map({
-											container: 'property_location',
-											style: 'mapbox://styles/mapbox/streets-v11',
-											center: [122.9583955, 10.687105],
-											zoom: 14
-										});
-									</script>
+								<textarea name="property_desc" id="property_desc" class="description"></textarea>
+								<div class="mt-3">
+									<p>Property Price:</p>
+									<input type="number" name="regular_price" class="mb-2 form-control" id="regular_price" placeholder="Regular Price">
+									<input type="number" name="regular_price" id="regular_price" class="form-control" placeholder="Sale Price">
 								</div>
+							</div>
+							<div class="col-lg-7">
+								<div class="row">
+									<div class="form-group col-lg-6">
+										<select type="text" name="city" id="city" class="form-control">
+											<option value="Bacolod">Bacolod</option>
+										</select>
+									</div>
+									<div class="form-group col-lg-6">
+										<select type="text" name="barangay" id="barangay" class="form-control">
+											<option value="Bacolod">Bacolod</option>
+										</select>
+									</div>
+									<div class="form-group col-12">
+										<input type="text" name="street" id="street" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<div id="map" class="location_search">
+										<button type="button" class="marker btn btn-default">
+											<i class="fa fa-map-marker-alt fa-fw"></i>
+										</button>
+										<input type="hidden" class="property_lat" name="property_lat">
+										<input type="hidden" class="property_lng" name="property_lng">
+										<input type="hidden" class="property_zoom" name="property_zoom">
+										<div id="geocoder"></div>
+										<div id="coordinates" class="coordinates"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group mb-3">
+						<h2 class="h5">
+							Property Features
+						</h2>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-lg-3">
+
 							</div>
 						</div>
 					</div>
