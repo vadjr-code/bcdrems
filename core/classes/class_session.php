@@ -5,7 +5,7 @@ class Session
 	{
 		if (!isset($_SESSION['user_id'])) {
 			$last_url_visited = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-			header("Location: /login.php?r=" . $last_url_visited);
+			header("Location: /login.php?redirect=" . $last_url_visited);
 		}
 		if (isset($_GET['logout'])) {
 			session_unset();
@@ -16,10 +16,10 @@ class Session
 	public static function login()
 	{
 		if (isset($_SESSION['user_id'])) {
-			if (isset($_GET['r'])) {
-				header("Location: //" . $_GET['r']);
+			if (isset($_GET['redirect'])) {
+				header("Location:" . $_GET['redirect']);
 			} else {
-				header('Location:/mgmt/');
+				header("Location:/mgmt/");
 			}
 		}
 	}

@@ -2,6 +2,7 @@
 define('ROOT_PATH', dirname(dirname(dirname(__FILE__))));
 require_once ROOT_PATH . '/system_config.php';
 require_once ROOT_PATH . '/core/files.php';
+$database = new Database();
 Session::check();
 ?>
 <!DOCTYPE html>
@@ -26,6 +27,35 @@ Session::check();
 	<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
 	<script>
 		mapboxgl.accessToken = 'pk.eyJ1Ijoic2FnZWNvZGV4IiwiYSI6ImNrOXAxcm45YTA2OXMzb24xbGVzbjFvcnMifQ.79VzBKe-icUjCEE_ifFUAw';
+
+		var icons = {
+			0: 'fa fa-asterisk',
+			1: 'fa fa-key',
+			2: 'fa fa-bath',
+			3: 'fa fa-home',
+			4: 'fa fa-map',
+			5: 'fa fa-map-marker',
+			6: 'fa fa-shopping-cart',
+			7: 'fa fa-lock',
+			8: 'fa fa-road',
+			9: 'fa fa-umbrella',
+			10: 'fa fa-trash',
+			11: 'fa fa-user-md',
+			12: 'fa fa-bell',
+			13: 'fa fa-star',
+			14: 'fa fa-briefcase',
+			15: 'fa fa-globe',
+			16: 'fa fa-certificate',
+			17: 'fa fa-heart',
+			18: 'fa fa-fire',
+			19: 'fa fa-user'
+		};
+
+		var map = '';
+		var geocoder = '';
+		var marker = '';
+
+		var mgmt_uri = window.location.protocol + "//" + window.location.host + "/mgmt";
 	</script>
 </head>
 
@@ -62,6 +92,9 @@ Session::check();
 							<li class="nav-item">
 								<a href="<?php mgmt_uri('property_type.php'); ?>" class="nav-link">Property Type</a>
 							</li>
+							<!-- <li class="nav-item">
+								<a href="<?php mgmt_uri('features.php'); ?>" class="nav-link">Features</a>
+							</li> -->
 						</ul>
 					</li>
 					<li class="nav-item has-children">

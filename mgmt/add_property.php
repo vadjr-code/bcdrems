@@ -56,15 +56,56 @@ require_once 'templates/header.php';
 					</div>
 					<div class="form-group mb-3">
 						<h2 class="h5">
-							Property Features
+							Main Features
 						</h2>
 					</div>
 					<div class="form-group">
 						<div class="row">
-							<div class="col-lg-3">
-
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="">Area:</label>
+									<input type="number" name="area" value="0" min="0" class="form-control">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="">Beds:</label>
+									<input type="number" name="beds" value="0" min="0" class="form-control">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="">Baths:</label>
+									<input type="number" name="baths" value="0" min="0" class="form-control">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="">Size:</label>
+									<input type="number" name="size" value="0" min="0" class="form-control">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="">Floors:</label>
+									<input type="number" name="floors" value="0" min="0" class="form-control">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="">Garage:</label>
+									<input type="number" name="garage" value="0" min="0" class="form-control">
+								</div>
 							</div>
 						</div>
+					</div>
+					<div class="form-group mb-3">
+						<h2 class="h5">
+							Additional Features
+						</h2>
+					</div>
+					<div class="form-group">
+						<textarea type="text" rowspan="5" class="form-control"></textarea>
 					</div>
 				</div>
 				<div class="col col-12 col-lg-3">

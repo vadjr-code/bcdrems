@@ -1,4 +1,3 @@
-var map = '';
 $('.location_search').each(function () {
 	map = new mapboxgl.Map({
 		container: 'map',
@@ -6,19 +5,19 @@ $('.location_search').each(function () {
 		center: [122.9583955, 10.687105],
 		zoom: 12
 	});
+	geocoder = new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken,
+		countries: 'ph',
+		mapboxgl: mapboxgl,
+		marker: false
+	}).addTo(map);
+	marker = new mapboxgl.Marker()
+		.setLngLat([122.9583955, 10.687105])
+		.addTo(map);
 });
 
-var geocoder = new MapboxGeocoder({
-	accessToken: mapboxgl.accessToken,
-	countries: 'ph',
-	mapboxgl: mapboxgl,
-	marker: false
-}).addTo(map);
 
 // map.addControl(new mapboxgl.NavigationControl());
-var marker = new mapboxgl.Marker()
-	.setLngLat([122.9583955, 10.687105])
-	.addTo(map);
 
 $('#map .marker').on('click', onDragEnd);
 

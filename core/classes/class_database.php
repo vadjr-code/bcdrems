@@ -11,7 +11,7 @@ class Database
 	{
 		$this->gb_conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	}
-	
+
 	public function query($sql)
 	{
 		return mysqli_query($this->gb_conn, $sql);
@@ -20,5 +20,10 @@ class Database
 	public function esc($str)
 	{
 		return mysqli_real_escape_string($this->gb_conn, $str);
+	}
+
+	public function close()
+	{
+		return mysqli_close($this->gb_conn);
 	}
 }

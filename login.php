@@ -6,6 +6,7 @@ require_once ROOT_PATH . '/core/files.php';
 $database = new Database();
 $session = new Session();
 $user = new User();
+Session::login();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@ $user = new User();
 		<div class="row justify-content-center align-items-center" style="min-height:100vh">
 			<div class="col col-lg-5 col-md-7 mx-auto">
 				<div class="card shadow">
-					<form method="POST" action="login.php">
+					<form method="POST">
 						<div class="card-body">
 							<h3 class="mb-3 font-weight-bold">
 								<?php if (defined('SYS_TITLE')) {
@@ -67,6 +68,6 @@ if (isset($_POST['login_user'])) {
 	$password = $_POST['password'];
 	if ($user->has_credential($username, $password)) {
 		$session->create($user->has_credential($username, $password));
-		Session::login();
+		header('Location:' . $_GET['r']);
 	}
 }

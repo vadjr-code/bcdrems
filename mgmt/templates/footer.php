@@ -6,8 +6,10 @@
 <script src="/inc/assets/jquery-easing/jquery.easing.compatibility.js"></script>
 <script src="/inc/assets/jquery-easing/jquery.easing.min.js"></script>
 <script src="/inc/assets/mgmt/js/scripts.js"></script>
+<script src="/inc/assets/mgmt/js/feature_icons.js"></script>
 <script src="/inc/assets/mgmt/js/tinymce_config.js"></script>
 <script src="/inc/assets/mgmt/js/map_script.js"></script>
+<script src="/inc/assets/mgmt/js/form_submit.js"></script>
 </body>
 
 </html>
